@@ -1,0 +1,44 @@
+
+.similar_box_movie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.similar_card_movie {
+  position: relative;
+  margin: 20px 0;
+}
+.similar_card_movie .similar_image {
+  width: 250px;
+}
+
+.similar_card_movie .similar_image img {
+  width: 100px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 0;
+}
+.similar_title_movie {
+  position: absolute;
+  left: 45%;
+  top: 20%;
+}
+
+@media screen and (max-width: 1024px) {
+  .similarmovie {
+    padding-left: 10%;
+  }
+
+  .similar_card_movie {
+    position: relative;
+    max-width: 200px;
+   
+  }
+
+  .similar_title_movie {
+   padding-left: 12px;
+  }
+  
+}
+

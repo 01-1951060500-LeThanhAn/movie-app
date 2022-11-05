@@ -1,0 +1,14 @@
+.esp {
+    height: 650px;
+    overflow-x: auto;
+}
+
+.esp::-webkit-scrollbar {
+    width: 0;
+  }
+  
+  .esp::-webkit-scrollbar-track {
+    background-color: transparent;
+    z-index: 99;
+    border-radius: 20px;
+  }

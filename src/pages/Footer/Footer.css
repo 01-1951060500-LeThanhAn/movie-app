@@ -1,0 +1,34 @@
+.footer {
+    padding: 10px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: black;
+  }
+  
+  .footer_name { 
+    color: #fff;
+  }
+
+.footer_contact .github, 
+.footer_contact .facebook,
+.footer_contact .youtube
+ {
+  font-size: 30px;
+  margin-right: 10px;
+}
+_.footer_contact .logo:not(:last-child) {
+  padding-right: 10px;
+}
+
+.footer_contact .facebook {
+color: rgb(87, 113, 243);
+ 
+}
+.footer_contact .youtube {
+  color: rgb(153, 19, 19);
+   
+  }
+  
+
+  

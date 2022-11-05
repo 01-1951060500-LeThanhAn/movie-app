@@ -1,0 +1,94 @@
+.history-movies {
+ padding-top: 80px;
+  padding-bottom: 50px;
+}
+
+.trendings {
+  display: grid;
+  grid-template-columns: repeat(5, 220px);
+  gap: 2rem 1.5rem;
+  
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+@media screen and (max-width: 1536px) {
+  .history {
+    padding: 0 100px;
+    margin-top: 40px;
+    padding-bottom: 40px;
+  }
+  .trendings {
+    display: grid;
+    grid-template-columns: repeat(5, 220px);
+    gap: 2rem 1.5rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .history {
+    padding: 0 50px;
+    margin-top: 40px;
+  }
+  .trendings {
+    display: grid;
+    grid-template-columns: repeat(4, 215px);
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .history {
+    padding: 0 25px;
+  }
+  .trendings {
+    display: grid;
+    grid-template-columns: repeat(3, 215px);
+    gap: 1.5rem 2rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .history {
+    padding: 0 45px;
+  }
+  .trendings {
+    display: grid;
+    grid-template-columns: repeat(2, 215px);
+    padding-left: 20px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+  .history {
+    padding: 0 25px;
+  }
+  .trendings {
+    display: grid;
+    grid-template-columns: repeat(1, 240px);
+    padding-left: 60px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .history {
+    padding: 0 10px;
+  }
+  .trendings {
+    display: grid;
+    grid-template-columns: repeat(1, 200px);
+    padding-left: 60px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .history {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .trendings {
+    display: grid;
+    grid-template-columns: repeat(1, 215px);
+  }
+}

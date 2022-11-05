@@ -1,0 +1,35 @@
+.favourite {
+  padding: 0 50px;
+  margin: 0;
+  
+}
+.favourite_list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem 1.3rem;
+}
+.favourite__card {
+  position: relative;
+  margin-top: 90px;
+}
+.favourite__slide__item--close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 25px;
+  cursor: pointer;
+  display: none;
+  transition: all 0.4s ease;
+
+}
+.favourite__card:hover .favourite__slide__item--close {
+  display: block;
+ 
+}
+
+.no_favourite {
+
+ text-align: center;
+ padding-top: 100px;
+}
+
