@@ -1,18 +1,16 @@
-import React from "react";
+
 import Skeleton from "react-loading-skeleton";
-import "./SkeletonCard.css";
+
 const SkeletonPost = () => {
   return (
-    <section>
+    <section> 
       <div>
         {Array(10)
-          .fill()
-          .map((item) => (
-          
-              <div className="card-image" key={item}>
-                <Skeleton duration={2} height={400} width={"100%"} />
-              </div>
-          
+          .fill([])
+          .map((i) => (
+            <div key={i} className="z-10 w-40 md:w-56  lg:w-56 2xl:w-56 mx-auto h-88 my-3">
+              <Skeleton duration={2} height={300} width={"100%"} />
+            </div>
           ))}
       </div>
     </section>

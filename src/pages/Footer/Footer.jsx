@@ -1,24 +1,20 @@
 import React from 'react';
 import "./Footer.css"
-// import  AiFillYoutube from "react-icons";
-// import BsGithub from "react-icons/bs";
-// import BsFacebook from "react-icons"
+
 import * as Bs from "react-icons/bs"
-import * as Ai from "react-icons/ai" 
+
 function Footer() { 
   return (
-    <div className="footer">
+    <div className="bg-black d-flex justify-between text-white px-8 py-[20px] items-center">
     <p className="footer_name">Le Thanh An</p>
-    <p className="footer_contact">
-      <a href="https://github.com/01-1951060500-LeThanhAn/" className="github logo">
+    <p className="flex items-center">
+      <a href="https://github.com/01-1951060500-LeThanhAn/" className="text-3xl ">
         <Bs.BsGithub />
       </a>
-      <a className="facebook logo">
+      <a href="https://github.com/01-1951060500-LeThanhAn/" className="text-blue-600 text-3xl ml-3">
        <Bs.BsFacebook />
       </a>
-      <a className="youtube logo">
-      <Ai.AiFillYoutube />
-      </a>
+    
     </p>
   </div>
   )

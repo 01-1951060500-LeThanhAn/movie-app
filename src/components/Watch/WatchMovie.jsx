@@ -24,11 +24,11 @@ const WatchMovie = () => {
   }, [id]);
 
   return (
-    <div className="containers">
-      <div className="row">
-        <div className="watch-container">
-          <div className="watch-movie-flex">
-            <div className="watch-movie-video">
+    <div className="pt-[120px] px-4 w-full 2xl:w-full">
+      <div className=" 2xl:px-32">
+        <div className="flex flex-col lg:flex-row">
+          <div className="lg:w-5/6">
+            <div className="w-full h-[300px] lg:w-[5/6] 2xl:h-[500px] lg:h-[450px]">
               <iframe
                 width="100%"
                 height={"100%"}
@@ -40,7 +40,7 @@ const WatchMovie = () => {
             </div>
 
             <div className="watch_info">
-              <h1 className="watch_name">{info.title}</h1>
+              <h1 className="watch_name text-3xl font-fold mt-5">{info.title}</h1>
               <p className="watch_overview">{info.overview}</p>
               <p className="watch_release_date">
                 Release date: {info.release_date}

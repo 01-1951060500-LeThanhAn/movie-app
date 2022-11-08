@@ -7,7 +7,7 @@ import Genres from "../../components/Genres/Genres";
 import Paginations from "../../components/Paginations/Paginations";
 import { Link } from "react-router-dom";
 import apiConfig from "../../config/config";
-import SkeletonCard from "../../components/SkeletonCard/SkeletonCard";
+import SkeletonPost from "../../components/SkeletonCard/SkeletonCard";
 const Movie = () => {
   const [contact, setContact] = useState([]);
   const [page, setPage] = useState(1);
@@ -45,57 +45,40 @@ const Movie = () => {
 
   return (
     <>
-      <div className="movies_main">
-        <div className="movies">
-          <Genres
-            type="movie"
-            selectedGenres={selectedGenres}
-            setSelectedGenres={setSelectedGenres}
-            genres={genres}
-            setGenres={setGenres}
-            setPage={setPage}
-            page={page}
-          />
-
-          <div className="movies_box">
-            {!loading ? (
-              contact?.map((slide) => (
-                <Link to={`/details/movie/${slide.id}`}>
-                  <CardInfo
-                    key={slide.id}
-                    id={slide.id}
-                    poster={slide.poster_path}
-                    title={slide.title || slide.name}
-                    date={slide.first_air_date || slide.release_date}
-                    media_type={slide.media_type}
-                  />
-                </Link>
-              ))
-            ) : (
-              <>
-                <SkeletonCard />
-                <SkeletonCard />
-                <SkeletonCard />
-                <SkeletonCard />
-                <SkeletonCard />
-                <SkeletonCard />
-                <SkeletonCard />
-                <SkeletonCard />
-                <SkeletonCard />
-                <SkeletonCard />
-                <SkeletonCard />
-                <SkeletonCard />
-                <SkeletonCard />
-                <SkeletonCard />
-                <SkeletonCard />
-                <SkeletonCard />
-                <SkeletonCard />
-                <SkeletonCard />
-                <SkeletonCard />
-                <SkeletonCard />
-              </>
-            )}
-          </div>
+      <div className="2xl:px-32 pt-28 ">
+        <Genres
+          type="movie"
+          selectedGenres={selectedGenres}
+          setSelectedGenres={setSelectedGenres}
+          genres={genres}
+          setGenres={setGenres}
+          setPage={setPage}
+          page={page}
+        />
+        <div className="px-3  grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
+          {loading && (
+            <>
+              <SkeletonPost />
+              <SkeletonPost />
+              <SkeletonPost />
+              <SkeletonPost />
+              <SkeletonPost />
+              <SkeletonPost />
+            </>
+          )}
+          {!loading &&
+            contact.map((slide) => (
+              <Link to={`/details/movie/${slide.id}`}>
+                <CardInfo
+                  key={slide.id}
+                  id={slide.id}
+                  poster={slide.poster_path}
+                  title={slide.title || slide.name}
+                  date={slide.first_air_date || slide.release_date}
+                  media_type={slide.media_type}
+                />
+              </Link>
+            ))}
         </div>
       </div>
 

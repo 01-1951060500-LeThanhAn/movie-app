@@ -11,7 +11,7 @@ const CardInfo = ({ id, poster, title, date, media_type }) => {
           src={poster ? `${img_300}/${poster}` : unavailable}
           alt={title}
         />
-        <p className="title">{title.length > 20 ? title.substring(0,20) : title}...</p>
+        <p className="title">{title.slice(0,20)}</p>
       
       </div>
     </>

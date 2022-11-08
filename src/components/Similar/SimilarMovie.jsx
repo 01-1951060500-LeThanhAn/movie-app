@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, Link } from "react-router-dom";
-
+import "./SimilarMovie.css"
 import apiConfig, { img_300 } from "../../config/config";
-import "./SimilarMovie.css";
+
 const SimilarMovie = () => {
   const [similarMovie, setSimilarMovie] = useState([]);
 
   const [page, setPage] = useState(1);
 
-  const { media_type, id } = useParams();
+  const { id } = useParams();
 
   const getSimilar = async (id) => {
     const { data } = await axios.get(
@@ -24,18 +24,18 @@ const SimilarMovie = () => {
 
   return (
     <>
-      <div className="similarmovie">
+      <div className="similarmovies ml-4">
         <h4 style={{ paddingBottom: "30px", paddingLeft: "25px" }}>SIMILAR</h4>
         {similarMovie && (
-          <div className="similar_box_movie">
+          <div className="flex flex-col items-center">
             {similarMovie.map((item) => (
               <Link to={`/details/movie/${item.id}`} key={item.id}>
-                <div className="similar_card_movie">
-                  <div className="similar_image">
-                    <img src={`${img_300}/${item.poster_path}`} alt="" />
+                <div className="relative my-[20px]">
+                  <div className="w-[230px] h-auto">
+                    <img className="w-[120px] h-auto object-cover" src={`${img_300}/${item.poster_path}`} alt="" />
                   </div>
-                  <div className="similar_title_movie">
-                    <p>{item.title || item.name}</p>
+                  <div className="absolute left-[65%] top-1/2">
+                    <p>{item.title.substring(0,20) || item.name.substring(0,20)}</p>
                   </div>
                 </div>
               </Link>

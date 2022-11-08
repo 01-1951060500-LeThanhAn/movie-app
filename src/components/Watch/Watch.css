@@ -1,27 +1,5 @@
-.containers {
-    padding: 0 80px;
-    padding-top: 120px;
-}
-.watch-container {
-    display: flex;
-    flex: 1;
-}
-.similarMovie {
-    width: 25%;
-  
-}
-.watch-movie-video {
-    width: 100%;
-    height: 500px;
-}
-.watch-movie-flex {
-    width: 75%;
-}
-.watch_info {
-  margin-top: 40px;
-}
 
-@media screen and (max-width: 1024px) {
+/* @media screen and (max-width: 1024px) {
     .containers {
         padding: 0 10px;
     }
@@ -35,8 +13,8 @@
     .watch-container {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        padding-top: 100px;
+        justify-content: start;
+       
     }
 
     .watch-movie-flex {
@@ -65,4 +43,4 @@
     .watch-movie-video {
         height:280px;
     }
-  }
+  } */

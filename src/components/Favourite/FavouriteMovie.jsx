@@ -56,10 +56,10 @@ const FavouriteMovie = () => {
   return (
     <>
       {!loading && (
-        <div className="favourite">
-          <div className="favourite__slide">
+        <div className="2xl:px-32 pb-4">
+          <div className="px-3 ">
             {favouriteMovie.length > 0 ? (
-              <div className="favourite_list">
+              <div className="grid grid-cols-2 gap-x-3 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
                 {favouriteMovie.map((slide) => (
                      slide.uid === user?.uid && (
                       <div className="favourite__card" key={slide.id}>

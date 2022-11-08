@@ -5,7 +5,7 @@ import SwiperCore, { Autoplay } from "swiper";
 import apiConfig from "../../config/config";
 import HeroSlideItem from "./HeroSlideItem"
 import "./SliderPreview.css";
-
+import "swiper/css";
 const SliderPreview = () => {
   const [slider, setSlider] = useState([]);
 
@@ -31,6 +31,9 @@ const SliderPreview = () => {
           grabCursor={true}
           spaceBetween={0}
           slidesPerView={1}
+          autoplay={{delay: 4000}}
+          navigation
+          loop={true}
         >
           {slider.map((item, i) => (
             <SwiperSlide key={item.id}>

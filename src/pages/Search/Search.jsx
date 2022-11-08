@@ -47,12 +47,12 @@ const Search = () => {
   }, [type, page]); 
 
   return (
-    <div className="container-fluid">
-      <div className="search">
+    <div className="pt-[100px]  2xl:px-32">
+      <div className="px-3">
         <div style={{ display: "flex" }}>
           <ThemeProvider theme={theme}>
             <TextField
-              style={{ flex: 1, width: "100%", marginLeft: "20px" }}
+              style={{ flex: 1, width: "100%"}}
               className="search"
               label="Search"
               variant="filled"
@@ -85,8 +85,8 @@ const Search = () => {
           ></Tab>
         </Tabs>
 
-        <div className="trendingsearch mt-4">
-          <div className="info_movie">
+        <div className=" mt-4">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-4">
             {content.map((item) => (
               <Link to={`/details/${type ? "movie" : "tv"}/${item.id}`}>
                 <CardInfo

@@ -56,7 +56,7 @@ const Header = () => {
   return (
     <>
       <div className="container-main">
-        <nav className={navbar ? "navbar active" : "navbar"}>
+        <nav className={navbar ? "navbars active" : "navbars"}>
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
             ThanhAn
           </Link>

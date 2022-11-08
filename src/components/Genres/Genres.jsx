@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import axios from "axios";
-import "./Genres.css";
+
 import { Chip } from "@material-ui/core";
 import apiConfig from "../../config/config"
 const Genres = ({
@@ -45,12 +45,11 @@ const Genres = ({
    }
 
   return (
-   <div className="genres-parent">
-      <div className="genres mb-3">
+   <div className="px-4">
+      <div className="grid grid-cols-3 gap-3 pb-3 md:grid-cols-5 lg:grid-cols-7 2xl:grid-cols-8">
        {selectedGenres &&
           selectedGenres.map((genre) => (
             <Chip
-             
               label={genre.name}
               size="small"
               color="primary"

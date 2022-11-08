@@ -46,8 +46,8 @@ const Comment = ({ id }) => {
   }, [id]);
 
   return (
-    <div className="comment">
-      <h2 className="comment_title">Comments</h2>
+    <div className="comment my-6">
+      <h2 className="comment_title mb-3">Comments</h2>
       <form onSubmit={handlePostComment}>
         <div className="comment_container">
           {

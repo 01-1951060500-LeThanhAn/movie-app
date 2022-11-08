@@ -26,10 +26,11 @@ const GetMovie = ({ type }) => {
   };
 
   useEffect(() => {
+   
     fetchPopularMovie();
     setLoading(true);
     const timing = setTimeout(() => {
-      setLoading(false);
+      setLoading(false); 
     }, 1000);
     return () => clearTimeout(timing);
   }, [page]);
@@ -37,8 +38,8 @@ const GetMovie = ({ type }) => {
   return (
     <>
    
-      <div className="media">
-        <div className="trending">
+      <div className="2xl:px-32">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
           {loading && (
            <>
              <SkeletonPost />

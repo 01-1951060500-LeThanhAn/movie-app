@@ -39,17 +39,17 @@ const WatchTv = () => {
         .catch((err) => {
           console.log(err);
         });
-    };
+    }; 
 
     getEspCurrent(id, season, esp);
   }, [esp, season, id]);
 
   return (
-    <div className="containers">
-      <div className="row">
-        <div className="watch-container">
-          <div className="watch-movie-flex">
-            <div className="watch-movie-video">
+    <div className="pt-[120px] px-3 w-full 2xl:w-full">
+      <div className="2xl:px-32">
+        <div className="flex flex-col lg:flex-row">
+          <div className="lg:w-8/12">
+            <div className="w-full h-[300px] 2xl:h-[500px] lg:h-[450px]">
               <iframe
                 width="100%"
                 height={"100%"}
@@ -59,12 +59,12 @@ const WatchTv = () => {
               />
             </div>
 
-            <div className="watch_info">
+            <div className="watch_info mt-6">
               <p className="watch-tv-season-number">
                 Season {espCurrent && espCurrent?.season_number} | Episode{" "}
                 {espCurrent?.episode_number}
               </p>
-              <p className="watch-tv-name-esp">Name: {espCurrent?.name}</p>
+              <p className="watch-tv-name-esp">Name: <span className="text-2xl font-bold">{espCurrent?.name}</span></p>
               <p className="watch-tv-overview">
                 Overview: {espCurrent?.overview}
               </p>
@@ -77,7 +77,7 @@ const WatchTv = () => {
             <Comment id={id} />
           </div>
 
-          <div className="similarMovie">
+          <div className="lg:w-4/12">
             {seasonsTV.map((item) => {
               if (item.season_number > 0) {
                 return (

@@ -1,222 +1,194 @@
+.container-main {
+  
+}
 
-  .navbar {
-    position: fixed;
+.navbars {
+  position: fixed;
   top: 0;
   z-index: 3;
   left: 0;
-  padding: 0 ;
+  right: 0;
+
   height: 80px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   transition: all 0.3s linear;
-  }
+}
 
-  .navbar.active {
-    z-index: 20;
-    background-color: rgba(0, 0, 0, 0.8);
-  }
-  
-  .navbar-logo {
-    color: #fff;
-    margin-bottom: 20px;
-    margin-left: 20px;
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 2rem;
-   
-  }
-  
+.navbars.active {
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.navbar-logo {
+  color: #fff;
+  margin-bottom: 20px;
+  margin-left: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.nav-menu {
+  display: flex;
+
+  align-items: center;
+  padding: 0 30px;
+}
+
+.nav-item {
+  margin: 20px 15px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.nav-links {
+  color: white;
+  text-decoration: none;
+}
+
+.fa-bars {
+  color: #fff;
+}
+
+.nav-links-mobile {
+  display: none;
+}
+
+.menu-icon {
+  display: none;
+}
+
+.header-user-list {
+  right: 10px;
+  top: 60px;
+  position: absolute;
+  width: 300px;
+  background-color: #222;
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: all 0.4s linear;
+  display: none;
+  color: #fff;
+}
+
+.header-user-list li {
+  width: 100%;
+}
+.header-user-email {
+  color: #fff;
+}
+.header-user-item {
+  color: white;
+}
+
+.header-user-item:last-child {
+  border: none;
+}
+
+.bnt-login {
+  background-color: #e74c3c;
+  color: white;
+  font-weight: 600;
+  line-height: 30px;
+  padding: 5px;
+  border-radius: 8px;
+}
+
+.header-user:hover .header-user-list {
+  display: block;
+}
+
+.header-logo-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
  
   .nav-menu {
- 
     display: flex;
-    
+    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    padding: 0 30px;
-  }
-  
-  .nav-item {
-    margin: 20px 15px;
-    height: 30px;
-    line-height: 40px;
-  }
-  
-  .nav-links {
-    color: white;
-    text-decoration: none;
-    
-  }
-  
-  
-  .fa-bars {
-    color: #fff;
-  }
-  
-  .nav-links-mobile {
-    display: none;
-  }
-  
-  .menu-icon {
-    display: none;
-  }
-
-  .header-user-list {
-    right: 10px;
-    top: 60px;
-    position: absolute;
-    width: 300px;
-    background-color: #222;
-    
-    border-radius: 8px;
-    transition: all 0.4s linear;
-    display: none;
-    color: #fff;
-  }
-
-  .header-user-list li {
     width: 100%;
-   
+    height: 220px;
+    position: absolute;
+    top: 80px;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+  }
+
+  .nav-menu.active {
+    background: #242222;
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+  .nav-item {
+    margin: 8px auto;
+  }
+  .nav-links {
+    width: 100%;
+  }
+
+
+  .menu-icon {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(-100%, 60%);
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  .fa-times {
+    color: #fff;
+    font-size: 2rem;
+  }
+
+  .nav-links-mobile {
+    display: block;
+    text-align: center;
+    padding: 1.5rem;
+    margin: 2rem auto;
+    border-radius: 4px;
+    width: 80%;
+
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.5rem;
+  }
+
+  button {
+    display: none;
+  }
+
+  
+  .header-user-item {
+    color: #333;
+  }
+  .header-user-item a {
+    color: #333;
   }
   .header-user-email {
     color: #fff;
   }
-  .header-user-item {
-    color: white;
-  }
-  
- 
-  .header-user-item:last-child {
-    border: none;
-  } 
-  
-  .bnt-login {
+  .header-user-list {
+    right: 55px;
+    top: 70%;
+    position: absolute;
+    width: 300px;
+    background-color: white;
+    padding-top: 20px;
 
-    background-color: #e74c3c;
-    color: white;
-    font-weight: 600;
-    line-height: 30px;
-    padding: 5px;
-    border-radius: 8px;
-  }
-  
-  .header-user:hover .header-user-list {
-    display: block;
-  }
-  
-  .header-logo-mobile {
+    transition: all 0.4s linear;
     display: none;
+    color: #333;
   }
+}
 
-  @media screen and (max-width: 768px) {
-    .header-user-item {
-      color: #333;
-    }
-    .header-user-item a {
-      color: #333;
-    }
-    .header-user-email {
-      color: #fff;
-    }
-    .header-user-list {
-      right: 55px;
-      top: 70%;
-      position: absolute;
-      width: 300px;
-      background-color: white;
-      padding-top: 20px;
-     
-      transition: all 0.4s linear;
-      display: none;
-      color: #333;
-    }
-  
-  }
-  
-  @media screen and (max-width: 960px) {
-    .NavbarItems {
-      position: relative;
-    }
-    .navbar {
-      line-height: 35px;
-    }
-  
-    .nav-menu {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-      height: 220px;
-      position: absolute;
-      top: 80px;
-      left: -100%;
-      opacity: 1;
-      transition: all 0.5s ease;
-    }
-  
-    .nav-menu.active {
-      background: #242222;
-      left: 0;
-      opacity: 1;
-      transition: all 0.5s ease;
-      z-index: 1;
-    }
-    .nav-item {
-      margin: 8px auto;
-    }
-    .nav-links {
-      width: 100%;
-     
-    }
-  
-   
-  
-    .navbar-logo {
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: translate(25%, 50%);
-    }
-  
-    .menu-icon {
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      transform: translate(-100%, 60%);
-      font-size: 1.8rem;
-      cursor: pointer;
-    }
-  
-    .fa-times {
-      color: #fff;
-      font-size: 2rem;
-    }
-  
-    .nav-links-mobile {
-      display: block;
-      text-align: center;
-      padding: 1.5rem;
-      margin: 2rem auto;
-      border-radius: 4px;
-      width: 80%;
-    
-      text-decoration: none;
-      color: #fff;
-      font-size: 1.5rem;
-    }
-  
- 
-  
-    button {
-      display: none;
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-     .header-user-list {
-      margin-top: 50px;
-     }
-  }

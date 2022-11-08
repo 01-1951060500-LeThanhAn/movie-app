@@ -17,7 +17,7 @@ import { addMovieStorage } from "../../actions/historyMovie";
 
 import { useStore } from "../../stored/store";
 import { addFavouriteMovies } from "../../actions/fireStoreActions";
-import { Spin } from "react-cssfx-loading";
+import Helmet from "../Helmet/Helmet"
 const Detail = () => {
   const { id, media_type } = useParams();
   const [loading, setLoading] = useState(false);
@@ -81,6 +81,7 @@ const Detail = () => {
 
   return (
     <>
+        <Helmet title={content.name || content.title }/>
       <div>
         <div
           className="box_content "
@@ -92,11 +93,12 @@ const Detail = () => {
             )})`,
           }}
         >
+         
           {content && (
             <div className="container">
               <div className="row">
                 <div className="box_details ">
-                  <div className="box_image  ms-4">
+                  <div className="box_image">
                     <img
                       src={
                         content.backdrop_path
@@ -107,8 +109,8 @@ const Detail = () => {
                     />
                   </div>
 
-                  <div className="content_info  ms-4">
-                    <div className="content_name">
+                  <div className="content_info">
+                    <div className="content_name text-3xl font-bold">
                       <h2>{content.name || content.title}</h2>
                     </div>
                     <div className="content_date">
@@ -135,6 +137,7 @@ const Detail = () => {
                     <div className="ratings">
                       <ReactStars
                         count={8}
+                       
                         size={content.vote_average}
                         color="yellow"
                       />{" "}

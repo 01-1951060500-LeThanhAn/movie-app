@@ -6,7 +6,7 @@ import CardInfo from "../../components/CardInfo/CardInfo";
 
 import Paginations from "../../components/Paginations/Paginations";
 import apiConfig from "../../config/config";
-import { BarWave } from "react-cssfx-loading";
+
 import SkeletonCard from "../../components/SkeletonCard/SkeletonCard";
 const Trending = () => {
   const [slideMovie, setSlideMovie] = useState([]);
@@ -35,8 +35,8 @@ const Trending = () => {
 
   return (
     <>
-      <div className="media">
-        <div className="trending">
+      <div className="2xl:px-32">
+        <div className=" grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
           {loading && (
             <>
               <SkeletonCard />

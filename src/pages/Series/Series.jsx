@@ -7,7 +7,7 @@ import GenresTv from "../../components/Genres/GenresTV";
 import Paginations from "../../components/Paginations/Paginations";
 import { Link } from "react-router-dom";
 import apiConfig from "../../config/config";
-import SkeletonCard from "../../components/SkeletonCard/SkeletonCard"
+import SkeletonPost from "../../components/SkeletonCard/SkeletonCard";
 const Series = () => {
   const [contact, setContact] = useState([]);
   const [page, setPage] = useState(1);
@@ -38,67 +38,48 @@ const Series = () => {
     setLoading(true);
     const timing = setTimeout(() => {
       setLoading(false);
-    }, 500);
+    }, 500); 
     return () => clearTimeout(timing);
   }, []);
 
   return (
     <>
-   <div className="tv_main">
-        <div className="series_item">
-          <GenresTv
-            type="tv"
-            selectedGenres={selectedGenres}
-            setSelectedGenres={setSelectedGenres}
-            genres={genres}
-            setGenres={setGenres}
-            setPage={setPage}
-            page={page}
-          />
-  
-          <div className="series_list">
-            {!loading ? (
-              contact.map((slide) => (
-                <Link key={slide.id} to={`/details/tv/${slide.id}`}>
+  <div className="2xl:px-32 pt-28 ">
+        <GenresTv
+          type="tv"
+          selectedGenres={selectedGenres}
+          setSelectedGenres={setSelectedGenres}
+          genres={genres}
+          setGenres={setGenres}
+          setPage={setPage}
+          page={page}
+        />
+        <div className="px-3  grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
+          {loading && (
+            <>
+              <SkeletonPost />
+              <SkeletonPost />
+              <SkeletonPost />
+              <SkeletonPost />
+              <SkeletonPost />
+              <SkeletonPost />
+            </>
+          )}
+          {!loading &&
+            contact.map((slide) => (
+              <Link to={`/details/tv/${slide.id}`}>
                 <CardInfo
-               
+                  key={slide.id}
                   id={slide.id}
                   poster={slide.poster_path}
                   title={slide.title || slide.name}
                   date={slide.first_air_date || slide.release_date}
                   media_type={slide.media_type}
                 />
-                </Link>
-              ))
-            ) : (
-           <>
-                <SkeletonCard />
-                  <SkeletonCard />
-                  <SkeletonCard />
-                  <SkeletonCard />
-                  <SkeletonCard />
-                  <SkeletonCard />
-                  <SkeletonCard />
-                  <SkeletonCard />
-                  <SkeletonCard />
-                  <SkeletonCard />
-                  <SkeletonCard />
-                  <SkeletonCard />
-                  <SkeletonCard />
-                  <SkeletonCard />
-                  <SkeletonCard />
-                  <SkeletonCard />
-                  <SkeletonCard />
-                  <SkeletonCard />
-                  <SkeletonCard />
-                  <SkeletonCard />
-           </>
-            )
-              }
-          </div>
+              </Link>
+            ))}
         </div>
-
-   </div>
+      </div>
       {
         countPages > 1 && <Paginations setPage={setPage} page={page} countPages={countPages} />
       }

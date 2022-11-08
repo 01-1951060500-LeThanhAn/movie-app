@@ -1,13 +1,11 @@
 .container-fluid{
     padding-top: 100px;
 }
-.search {
-    padding: 0 50px 0 30px;
-}
+
 .trendingsearch {
    padding-left: 15px;
 }
-.info_movie {
+/* .info_movie {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 1.2rem 1.2rem;
@@ -69,4 +67,4 @@
         grid-template-columns: repeat(1, 1fr);
         
     }
-}
+} */

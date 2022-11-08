@@ -22,57 +22,59 @@ const Credit = ({ id, media_type }) => {
   }, []);
 
   return (
-    <div className="movie_list">
-      <h3>Full Cast</h3>
-      <Swiper
-        breakpoints={{
-          320: {
-            slidesPerView: 2,
-            spaceBetween: 10,
-          },
-          375: {
-            slidesPerView: 2,
-            spaceBetween: 10,
-          },
-          600: {
-            slidesPerView: 3,
-            spaceBetween: 10,
-          },
-          768: {
-            slidesPerView: 4,
-            spaceBetween: 10,
-          },
-          1024: {
-            slidesPerView: 5,
-            spaceBetween: 10,
-          },
-          1366: {
-            slidesPerView: 6,
-            spaceBetween: 10,
-          },
-        }}
-        grabCursor={true}
-        spaceBetween={0}
-        slidesPerView={6}
-        loop={true}
-      >
-        {credits.map((item) => (
-          <SwiperSlide>
-            <div className="carouselItem mt-4">
-              <img
-                src={
-                  item.profile_path
-                    ? `${img_300}/${item.profile_path}`
-                    : unavailable
-                }
-                alt={item.name}
-                onDragStart={handleDragStart}
-                className="carouselItem__img"
-              />
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+    <div className="pt-6 lg:px-4 2xl:px-12">
+      <h3 className="text-3xl font-bold">Full Cast</h3>
+      <div className="px-2 ">
+        <Swiper
+          breakpoints={{
+            320: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            375: {
+              slidesPerView: 2,
+              spaceBetween: 10,
+            },
+            600: {
+              slidesPerView: 3,
+              spaceBetween: 10,
+            },
+            768: {
+              slidesPerView: 4,
+              spaceBetween: 10,
+            },
+            1024: {
+              slidesPerView: 5,
+              spaceBetween: 10,
+            },
+            1366: {
+              slidesPerView: 6,
+              spaceBetween: 10,
+            },
+          }}
+          grabCursor={true}
+          spaceBetween={0}
+          slidesPerView={6}
+          loop={true}
+        >
+          {credits.map((item) => (
+            <SwiperSlide>
+              <div className="carouselItem mt-4">
+                <img
+                  src={
+                    item.profile_path
+                      ? `${img_300}/${item.profile_path}`
+                      : unavailable
+                  }
+                  alt={item.name}
+                  onDragStart={handleDragStart}
+                  className="carouselItem__img"
+                />
+              </div>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
     </div>
   );
 };
