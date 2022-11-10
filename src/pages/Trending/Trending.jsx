@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect,  useState } from "react";
 import axios from "axios";
 import "./Trending.css";
 import { Link } from "react-router-dom";
@@ -57,6 +57,7 @@ const Trending = () => {
                   title={slide.title || slide.name}
                   date={slide.first_air_date || slide.release_date}
                   media_type={slide.media_type}
+                  rating={slide.vote_average}
                 />
               </Link>
             ))}

@@ -8,13 +8,13 @@ import { useStore } from "../../stored/store";
 import { logOut } from "../../firebase/auth";
 
 const Header = () => {
-  
   const [navbar, setNavbar] = useState(false);
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
-  const { user } = useStore()
+  const { user } = useStore();
+  console.log(user)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,7 +37,7 @@ const Header = () => {
       setDropdown(true);
     }
   };
-
+ 
   const onMouseLeave = () => {
     if (window.innerWidth < 960) {
       setDropdown(false);
@@ -103,15 +103,18 @@ const Header = () => {
             <li className="nav-item">
               {user ? (
                 <div className="header-user">
-                  <p className="header-user-email">{user.email}</p>
+                 <img className="w-12 h-12 rounded-full -mt-2" src={user?.photoURL} alt={user?.displayName} />
 
                   <ul className="header-user-list">
-                    <li className="header-user-item">{user.displayName}</li>
+                 
                     <li className="header-user-item">
                       <Link to="/favourite-movie">Favourite Movie</Link>
                     </li>
                     <li className="header-user-item">
                       <Link to="/history-movie">History Movie</Link>
+                    </li>
+                    <li className="header-user-item">
+                      <Link to={`/profile/${user?.uid}`}>Profile</Link>
                     </li>
                     <li className="header-user-item" onClick={handleLogout}>
                       Log Out
@@ -120,7 +123,9 @@ const Header = () => {
                 </div>
               ) : (
                 <Link to="/login">
-                  <div style={{fontSize: "30px"}}><i className="bx bx-user-circle"></i></div>
+                  <div style={{ fontSize: "30px", color: "white" }}>
+                    <i className="bx bx-user-circle"></i>
+                  </div>
                 </Link>
               )}
             </li>

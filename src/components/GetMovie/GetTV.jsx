@@ -63,6 +63,7 @@ const GetTV = ({ type }) => {
                   title={slide.title || slide.name}
                   date={slide.first_air_date || slide.release_date}
                   media_type={slide.media_type}
+                  rating={slide.vote_average}
                 />
               </Link>
             ))}

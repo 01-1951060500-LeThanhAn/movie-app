@@ -21,7 +21,7 @@
   border-radius: 15px;
 }
 
-.content_original_genres {
+.content_original_genres { 
   display: flex;
   align-items: center;
   flex-direction: row;

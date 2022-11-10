@@ -4,6 +4,7 @@ import { postComment, fetchComment } from "../../actions/fireStoreActions";
 import { useStore } from "../../stored/store";
 import { avatar } from "../../config/config";
 import "./Comment.css"
+import { AiOutlineSend } from "react-icons/ai"
 import {
   
   Timestamp,
@@ -81,13 +82,10 @@ const Comment = ({ id }) => {
 
           <button
             className="send_comment"
-            style={{
-              opacity: loading ? 0.7 : 1,
-              cursor: loading ? "not allowed" : "pointer",
-            }}
+        
             disabled={loading}
           >
-            {loading ? "Waiting" : "Send"}
+           <AiOutlineSend />
           </button>
         </div>
 

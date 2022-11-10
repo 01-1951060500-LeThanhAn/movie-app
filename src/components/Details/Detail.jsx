@@ -52,6 +52,7 @@ const Detail = () => {
         media_type: media_type,
         title: content?.name || content?.title,
         viewAt: Date.now(),
+        rating: content.vote_average
       });
     }
   }, [content, media_type]);
@@ -123,11 +124,11 @@ const Detail = () => {
                       <p>{content.overview}</p>
                     </div>
 
-                    <div className="content_original_genres">
+                    <div className="flex flex-wrap flex-1 mt-4 ">
                       {content.genres &&
                         content.genres.map((genre, i) => (
                           <div className="genre_list" key={i}>
-                            <div className="genre_item">
+                            <div className="border-2 rounded-lg  my-2 border-white h-auto py-1 px-2 ml-2">
                               <p>{genre.name}</p>
                             </div>
                           </div>

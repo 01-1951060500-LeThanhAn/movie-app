@@ -31,6 +31,10 @@ const Similar = ({ id, media_type }) => {
           {similar && (
             <Swiper
               breakpoints={{
+                375: {
+                  slidesPerView: 2,
+                  spaceBetween: 10,
+                },
                 414: {
                   slidesPerView: 2,
                   spaceBetween: 10,

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import SimilarMovie from "../Similar/SimilarMovie";
-import "./Watch.css";
 
 import axios from "axios";
 import apiConfig from "../../config/config";
@@ -66,7 +65,7 @@ const WatchTv = () => {
               </p>
               <p className="watch-tv-name-esp">Name: <span className="text-2xl font-bold">{espCurrent?.name}</span></p>
               <p className="watch-tv-overview">
-                Overview: {espCurrent?.overview}
+                Overview: <br /> {espCurrent?.overview}
               </p>
               <p className="watch-tv-air_date">
                 Air Date: {espCurrent?.air_date}
@@ -96,6 +95,7 @@ const WatchTv = () => {
           </div>
         </div>
       </div>
+
     </div>
   );
 };

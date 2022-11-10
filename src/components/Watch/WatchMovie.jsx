@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import SimilarMovie from "../Similar/SimilarMovie";
 import Comment from "../Comment/Comment";
-import "./Watch.css";
 
 import axios from "axios";
 import apiConfig from "../../config/config";

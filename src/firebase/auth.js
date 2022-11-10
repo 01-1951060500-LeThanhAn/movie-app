@@ -3,6 +3,7 @@ import "firebase/compat/auth"
 import { initializeApp } from "firebase/app"
 import { createUserWithEmailAndPassword, FacebookAuthProvider, getAuth, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage"
 const firebaseConfig = initializeApp({
   apiKey : "AIzaSyB99_d50PQLq9ij-o1CurgUsoNAu9Yp6lU" , 
   authDomain : "movie-18195.firebaseapp.com" , 
@@ -37,3 +38,4 @@ export function signUp(email, password) {
 
 export const auth = getAuth(firebaseConfig);
 export const db = getFirestore(firebaseConfig);
+export const storage = getStorage(firebaseConfig)

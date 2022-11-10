@@ -23,21 +23,29 @@ import SignUp from "./pages/SignUp/SignUp";
 import Home from "./pages/Home/Home";
 import { useStore } from "./stored/store";
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "./firebase/auth";
+import { auth, db } from "./firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
+import Profile from "./pages/Profile/Profile";
 
 function App() {
 
-  const { setUser } = useStore();
+  const { user, setUser } = useStore();
   useEffect(() => {
     const unsub = onAuthStateChanged(auth, (currentUser) => {
       console.log("Auth", currentUser);
       setUser(currentUser);
+      setDoc(doc(db, "users", user?.uid), {
+        userId: user?.uid,
+        email: user?.email,
+        displayName: user?.displayName,
+        photoURL: user?.photoURL || ""
+      })
     });
 
     return () => {
       unsub();
     };
-  }, [setUser]);
+  }, [user]);
  
   return (
     <>
@@ -58,6 +66,7 @@ function App() {
               <Route path="/search" element={<Search />}></Route>
               <Route path="/login" element={<LoginPage />}></Route>
               <Route path="/signup" element={<SignUp />}></Route>
+              <Route path="/profile/:id" element={<Profile />}></Route>
               <Route
                 path="/favourite-movie"
                 element={<FavouriteMovie />}

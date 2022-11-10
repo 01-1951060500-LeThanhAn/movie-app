@@ -1,3 +1,4 @@
+
 import {
   collection,
   addDoc,
@@ -7,10 +8,13 @@ import {
   Timestamp,
   deleteDoc,
   doc,
+  getDoc,
 } from "firebase/firestore";
 
+
 import { toast } from "react-toastify";
-import { db } from "../firebase/auth";
+import { ref } from "yup";
+import { db, storage } from "../firebase/auth";
 
 export const addUser = async (user) => {
   const userRef = await addDoc(collection(db, "users"), user);
@@ -52,6 +56,7 @@ export const addFavouriteMovies = async (uid, movie, media_type) => {
         id: movie.id,
         title: movie.title || movie.name,
         poster_path: movie.poster_path,
+        rating: movie.vote_average,
         media_type,
       },
       create_at: Timestamp.now(),
@@ -62,5 +67,22 @@ export const addFavouriteMovies = async (uid, movie, media_type) => {
     return { ...data, id: res.id };
   } catch (error) {
     return toast.error(error.message);
+  }
+};
+
+export const getProfile = async (uid) => {
+  try {
+    const userRef = doc(db, "users", uid);
+
+    const docSnap = await getDoc(userRef);
+
+    if (docSnap.exists()) {
+      return { ...docSnap.data(), id: docSnap.id };
+    } else {
+      return null;
+    }
+  } catch (error) {
+   
+    toast.error(error.message);
   }
 };

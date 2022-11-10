@@ -69,6 +69,7 @@ const FavouriteMovie = () => {
                         <CardInfo
                           poster={slide.movie?.poster_path}
                           title={slide.movie?.title}
+                          rating={slide.movie?.rating}
                         />
                       </Link>
   

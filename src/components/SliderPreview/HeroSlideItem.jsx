@@ -22,7 +22,7 @@ const HeroSlideItem = (props) => {
               <img className="scale-100 " src={apiConfig.w500Image(item.poster_path)} alt="" />
             </div>
             <div className="z-30 w-full px-3">
-              <h2 className="title">{item.title}</h2>
+              <h2 className="text-3xl font-bold">{item.title}</h2>
               <div className="overview">{item.overview}</div>
               <div className="btns">
                 <Link to={`/watch/${media_type === type ? "movie" : "tv"}/${item.id}`}>

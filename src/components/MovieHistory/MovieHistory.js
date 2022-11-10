@@ -39,6 +39,7 @@ const MovieHistory = () => {
                   id={item.id}
                   poster={item.poster_path}
                   title={item.title}
+                  rating={item.rating}
                 />
               </Link>
               <div
