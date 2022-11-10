@@ -8,8 +8,8 @@ const ProfileSkeleton = () => {
       {Array(1)
         .fill([])
         .map((i) => (
-          <div key={i} className="w-52 h-52 object-cover rounded-full">
-            <Skeleton duration={2} height={300} width={"100%"} />
+          <div key={i} className="w-52 h-52 ">
+            <Skeleton className='rounded-full' duration={2} height={208} width={"100%"} />
           </div>
         ))}
     </div>

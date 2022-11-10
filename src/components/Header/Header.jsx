@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaTimes, FaBars } from "react-icons/fa";
 
 import "./Header.css";
@@ -14,8 +14,7 @@ const Header = () => {
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
   const { user } = useStore();
-  console.log(user)
-
+ const navigate = useNavigate()
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
@@ -49,6 +48,7 @@ const Header = () => {
   const handleLogout = async () => {
     try {
       await logOut();
+      navigate("/")
     } catch (error) {
       alert(error.message);
     }

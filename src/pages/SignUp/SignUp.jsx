@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import "../../components/LoginForm/LoginForm.css";
 import { signUp } from "../../firebase/auth";
 
@@ -17,7 +18,7 @@ const SignUp = () => {
     e.preventDefault();
     try {
       await signUp(email, username, password);
-
+         toast.success("Create account success")
       navigate("/login");
     } catch (err) {
       alert(err.message);
