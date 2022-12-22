@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import { useState } from "react";
 import { useEffect } from "react";
 import { useStore } from "../../stored/store";
@@ -16,6 +16,7 @@ const Profile = () => {
   const { id } = useParams();
   const [open, setOpen] = useState(false);
   const [loading, setLoading] = useState(false);
+  const nameRef = useRef();
 
   useEffect(() => {
     async function fetchProfile(ids) {
@@ -110,8 +111,8 @@ const Profile = () => {
                     {open ? (
                       <input
                         name="displayName"
+                        ref={nameRef}
                         value={profile?.displayName}
-                        onClick={handleUpdateProfile}
                         onChange={(e) =>
                           setProfile({
                             ...profile,
@@ -147,10 +148,9 @@ const Profile = () => {
                 <div className="">
                   <LazyLoadImage
                     className="w-52 h-52 object-cover rounded-full "
-                    src={!loading ?  profile?.photoURL : null}
+                    src={!loading ? profile?.photoURL : null}
                     alt=""
                   />
-                  
                 </div>
 
                 <input

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import SimilarMovie from "../Similar/SimilarMovie";
 import Comment from "../Comment/Comment";
-
+import Helmet from "../Helmet/Helmet"
 import axios from "axios";
 import apiConfig from "../../config/config";
 const WatchMovie = () => {
@@ -23,38 +23,41 @@ const WatchMovie = () => {
   }, [id]);
 
   return (
-    <div className="pt-[120px] px-4 w-full 2xl:w-full">
-      <div className=" 2xl:px-32">
-        <div className="flex flex-col lg:flex-row">
-          <div className="lg:w-5/6">
-            <div className="w-full h-[300px] lg:w-[5/6] 2xl:h-[500px] lg:h-[450px]">
-              <iframe
-                width="100%"
-                height={"100%"}
-                src={`https://www.2embed.to/embed/tmdb/movie?id=${id}`}
-                title="Movie player"
-                
-                allowFullScreen
-              />
+   <>
+  <Helmet title={`${info.name || info.title}-Watch`} />
+      <div className="pt-[120px] px-4 w-full 2xl:w-full">
+        <div className=" 2xl:px-32">
+          <div className="flex flex-col lg:flex-row">
+            <div className="lg:w-5/6">
+              <div className="w-full h-[300px] lg:w-[5/6] 2xl:h-[500px] lg:h-[450px]">
+                <iframe
+                  width="100%"
+                  height={"100%"}
+                  src={`https://www.2embed.to/embed/tmdb/movie?id=${id}`}
+                  title="Movie player"
+                  
+                  allowFullScreen
+                />
+              </div>
+  
+              <div className="watch_info">
+                <h1 className="watch_name text-3xl font-fold mt-5">{info.title}</h1>
+                <p className="watch_overview">{info.overview}</p>
+                <p className="watch_release_date">
+                  Release date: {info.release_date}
+                </p>
+              </div>
+  
+              <Comment id={id} />
             </div>
-
-            <div className="watch_info">
-              <h1 className="watch_name text-3xl font-fold mt-5">{info.title}</h1>
-              <p className="watch_overview">{info.overview}</p>
-              <p className="watch_release_date">
-                Release date: {info.release_date}
-              </p>
+  
+            <div className="similarMovie">
+              <SimilarMovie />
             </div>
-
-            <Comment id={id} />
-          </div>
-
-          <div className="similarMovie">
-            <SimilarMovie />
           </div>
         </div>
       </div>
-    </div>
+   </>
   );
 };
 
