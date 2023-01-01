@@ -26,29 +26,31 @@ const GetMovie = ({ type }) => {
   };
 
   useEffect(() => {
-   
+    window.scrollTo({
+      behavior: "smooth",
+      top: 320,
+    });
     fetchPopularMovie();
     setLoading(true);
     const timing = setTimeout(() => {
-      setLoading(false); 
+      setLoading(false);
     }, 1000);
     return () => clearTimeout(timing);
   }, [page]);
 
   return (
     <>
-   
       <div className="2xl:px-32">
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
           {loading && (
-           <>
-             <SkeletonPost />
-             <SkeletonPost />
-             <SkeletonPost />
-             <SkeletonPost />
-             <SkeletonPost />
-             <SkeletonPost />
-           </>
+            <>
+              <SkeletonPost />
+              <SkeletonPost />
+              <SkeletonPost />
+              <SkeletonPost />
+              <SkeletonPost />
+              <SkeletonPost />
+            </>
           )}
           {!loading &&
             slideMovie.map((slide) => (

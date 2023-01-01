@@ -1,4 +1,4 @@
-import React, { useEffect,  useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Trending.css";
 import { Link } from "react-router-dom";
@@ -26,6 +26,10 @@ const Trending = () => {
 
   useEffect(() => {
     fetchPopularMovie();
+    window.scrollTo({
+      behavior: "smooth",
+      top: 320,
+    });
     setLoading(true);
     const timing = setTimeout(() => {
       setLoading(false);

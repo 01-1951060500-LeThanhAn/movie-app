@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-import { Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 import CardInfo from "../../components/CardInfo/CardInfo";
 
 import Paginations from "../../components/Paginations/Paginations";
@@ -10,7 +10,6 @@ import { BarWave } from "react-cssfx-loading";
 import SkeletonPost from "../SkeletonCard/SkeletonCard";
 
 const GetTV = ({ type }) => {
- 
   const [slideMovie, setSlideMovie] = useState([]);
   const [page, setPage] = useState(1);
   const [countPages, setCountPages] = useState();
@@ -18,9 +17,9 @@ const GetTV = ({ type }) => {
 
   const fetchPopularMovie = async () => {
     const res = await axios.get(
-        type === "trending" 
-     ? `${apiConfig.baseUrl}trending/tv/week?api_key=${apiConfig.apikey}&page=${page}`
-     : `${apiConfig.baseUrl}tv/${type}?api_key=${apiConfig.apikey}&page=${page}`
+      type === "trending"
+        ? `${apiConfig.baseUrl}trending/tv/week?api_key=${apiConfig.apikey}&page=${page}`
+        : `${apiConfig.baseUrl}tv/${type}?api_key=${apiConfig.apikey}&page=${page}`
     );
 
     console.log(res.data.results);
@@ -29,7 +28,10 @@ const GetTV = ({ type }) => {
   };
 
   useEffect(() => {
-   
+    window.scrollTo({
+      behavior: "smooth",
+      top: 320,
+    });
     fetchPopularMovie();
     setLoading(true);
     const timing = setTimeout(() => {
@@ -40,18 +42,17 @@ const GetTV = ({ type }) => {
 
   return (
     <>
-   
       <div className="2xl:px-32">
         <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5">
           {loading && (
-           <>
-           <SkeletonPost />
-           <SkeletonPost />
-           <SkeletonPost />
-           <SkeletonPost />
-           <SkeletonPost />
-           <SkeletonPost />
-         </>
+            <>
+              <SkeletonPost />
+              <SkeletonPost />
+              <SkeletonPost />
+              <SkeletonPost />
+              <SkeletonPost />
+              <SkeletonPost />
+            </>
           )}
           {!loading &&
             slideMovie.map((slide) => (
