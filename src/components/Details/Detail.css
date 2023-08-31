@@ -1,0 +1,154 @@
+.box_details {
+  max-width: 100%;
+  margin-top: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 80px;
+}
+
+.box_image {
+  margin-right: 30px;
+  max-width: 300px;
+  height: 450px;
+  z-index: 2;
+}
+.box_image img {
+  width: 300px;
+  height: 100%;
+  object-fit: scale-down;
+
+  border-radius: 15px;
+}
+
+.content_original_genres { 
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+}
+.content_original_genres .genre_list {
+  padding-bottom: 20px;
+  margin: 0 20px;
+}
+.content_original_genres .genre_list:first-child {
+  margin: 0;
+}
+.content_original_genres .genre_item {
+  border: 2px solid white;
+  height: 45px;
+  border-radius: 25px;
+}
+
+.genre_item p {
+  padding: 7px 6px 0 6px;
+}
+.ratings {
+  display: inline-flex;
+  margin: 15px auto;
+}
+.ratings .ratings_count {
+  margin-left: 20px;
+}
+.content_info {
+  width: 75%;
+  z-index: 2;
+}
+
+.box_content {
+  display: flex;
+  align-items: center;
+  background-color: black;
+  margin-top: -50px;
+  position: relative;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+}
+
+.box_content::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#34495e41, #333 90%);
+  position: absolute;
+  z-index: 1;
+}
+
+@media screen and (max-width: 1024px) {
+  .box_content {
+    height: 50vh;
+  }
+}
+@media screen and (max-width: 768px) {
+  .box_details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 130px;
+  
+  }
+  .box_content {
+    display: flex;
+
+    align-items: center;
+    background-color: black;
+    margin-top: -50px;
+    position: relative;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh;
+  }
+
+  .box_image {
+    width: 100%;
+  }
+  .content_info {
+    width: 100%;
+    margin-top: 20px;
+  }
+} 
+
+@media screen and (max-width: 600px) {
+  .box_details {
+    margin-top: 150px;
+    padding: 0 30px;
+}
+  .box_content {
+   
+    height: auto;
+  }
+  .box_image {
+    height: 300px;
+  
+  }
+  .box_image img {
+   
+    height: 100%;
+    border-radius: 20px;
+  }
+}
+
+@media screen and (max-width: 414px) {
+    .box_details {
+        padding: 0 20px;
+    }
+    .box_image  {
+     margin: 0 auto;
+    }
+    .box_content {
+      display: flex;
+      align-items: center;
+      background-color: black;
+      
+      position: relative;
+      background-size: cover;
+      background-attachment: fixed;
+      height: 140vh;
+    }
+    .content_original_genres {
+      max-width: 100%;
+    }
+  }
+
+

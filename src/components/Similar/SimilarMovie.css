@@ -1,0 +1,17 @@
+.similarmovies {
+    height: 650px;
+    overflow-x: hidden;
+}
+
+.similarmovies::-webkit-scrollbar-thumb {
+    background-color: rgb(107, 97, 97);
+    border-radius: 20px;
+   }
+   
+   .similarmovies::-webkit-scrollbar {
+     width: 0px;
+     background-color: #282c34;
+   }
+   .similarmovies::-webkit-scrollbar-track {
+  
+   }

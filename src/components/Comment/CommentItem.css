@@ -1,0 +1,43 @@
+.show_commtent_items { 
+  display: flex;
+  margin: 45px auto;
+  height: auto;
+}
+
+.show_commtent_items .show_info {
+  padding: 10px;
+  background-color: #333;
+  border-radius: 15px;
+  position: relative;
+}
+
+.show_info .show_name_time {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+h3 {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.time {
+  color: rgb(123, 99, 99);
+  font-size: 13px;
+  padding-left: 10px;
+}
+
+.delete_comment {
+    position: absolute;
+    left: 10px;
+    top: 100%;
+    cursor: pointer;
+}
+.update_comment {
+    position: absolute;
+    left: 60px;
+    top: 100%;
+    cursor: pointer;
+}
+

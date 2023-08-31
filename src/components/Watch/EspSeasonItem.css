@@ -1,0 +1,39 @@
+.esp-main {
+  margin: 10px 20px;
+
+}
+.esp-item {
+  
+  display: flex;
+  justify-content: center;
+  position: relative;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+ 
+  line-height:20px;
+}
+
+.esp-item-img img {
+    position: absolute;
+  width: 120px;
+  height: 100%;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.esp-info {
+  padding-left: 120px;
+}
+
+@media only screen and (max-width: 1024px) {
+  .esp-main {
+    margin-left: 20px;
+  
+  }
+  .esp-title {
+    display: none;
+  }
+}

@@ -1,0 +1,24 @@
+.App {
+  min-height: 100vh;
+  background-color: #1E2129;
+  color: white;
+}
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgb(107, 97, 97);
+  border-radius: 20px;
+ }
+ 
+ body::-webkit-scrollbar {
+   width: 5px;
+   background-color: #282c34;
+ }
+ body::-webkit-scrollbar-track {
+
+ }

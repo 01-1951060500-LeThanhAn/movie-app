@@ -1,0 +1,46 @@
+img {
+    width: 180px;
+    border-radius: 15px;
+} 
+/* .movie_list {
+   padding: 50px 70px 40px 80px;
+}
+
+@media screen and (max-width: 1024px) {
+    .movie_list {
+        padding: 50px 30px 40px 30px;
+     }
+}
+
+@media screen and (max-width: 768px) {
+    .movie_list {
+        padding: 50px 30px 40px 30px;
+     }
+
+     img {
+        width: 150px;
+        border-radius: 25px;
+    } 
+}
+
+@media screen and (max-width: 375px) {
+    .movie_list {
+        padding: 50px 10px 40px 20px;
+     }
+
+     img {
+        width: 150px;
+        border-radius: 25px;
+    } 
+}
+
+@media screen and (max-width: 320px) {
+    .movie_list {
+        padding: 50px 10px 40px 20px;
+     }
+
+     img {
+        width: 130px;
+        border-radius: 25px;
+    } 
+} */

@@ -1,0 +1,16 @@
+
+_.footer_contact .logo:not(:last-child) {
+  padding-right: 10px;
+}
+
+.footer_contact .facebook {
+color: rgb(87, 113, 243);
+ 
+}
+.footer_contact .youtube {
+  color: rgb(153, 19, 19);
+   
+  }
+  
+
+  
