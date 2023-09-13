@@ -18,7 +18,7 @@ const Credit = ({ id, media_type }) => {
   };
   useEffect(() => {
     fetchCredits();
-  }, []);
+  }, [id, media_type]);
 
   return (
     <div className="pt-6 lg:px-4 2xl:px-12">

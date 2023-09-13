@@ -1,4 +1,3 @@
-
 import {
   collection,
   addDoc,
@@ -6,15 +5,12 @@ import {
   where,
   getDocs,
   Timestamp,
-  deleteDoc,
   doc,
   getDoc,
 } from "firebase/firestore";
 
-
 import { toast } from "react-toastify";
-import { ref } from "yup";
-import { db, storage } from "../firebase/auth";
+import { db } from "../firebase/auth";
 
 export const addUser = async (user) => {
   const userRef = await addDoc(collection(db, "users"), user);
@@ -82,7 +78,6 @@ export const getProfile = async (uid) => {
       return null;
     }
   } catch (error) {
-   
     toast.error(error.message);
   }
 };

@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import { Link } from "react-router-dom";
@@ -6,7 +6,6 @@ import CardInfo from "../../components/CardInfo/CardInfo";
 
 import Paginations from "../../components/Paginations/Paginations";
 import apiConfig from "../../config/config";
-import { BarWave } from "react-cssfx-loading";
 import SkeletonPost from "../SkeletonCard/SkeletonCard";
 
 const GetMovie = ({ type }) => {
@@ -36,7 +35,7 @@ const GetMovie = ({ type }) => {
       setLoading(false);
     }, 1000);
     return () => clearTimeout(timing);
-  }, [page]);
+  }, [page, type]);
 
   return (
     <>

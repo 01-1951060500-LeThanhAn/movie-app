@@ -6,7 +6,6 @@ import CardInfo from "../../components/CardInfo/CardInfo";
 
 import Paginations from "../../components/Paginations/Paginations";
 import apiConfig from "../../config/config";
-import { BarWave } from "react-cssfx-loading";
 import SkeletonPost from "../SkeletonCard/SkeletonCard";
 
 const GetTV = ({ type }) => {
